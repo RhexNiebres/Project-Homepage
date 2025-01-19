@@ -49,7 +49,7 @@ function driver() {
         const description = document.createElement("div");
         description.classList.add("description");
         description.textContent =
-            "description of the project. Just a few sentence will do";
+            "description of the project.";
 
         descSec.appendChild(descHead);
         descSec.appendChild(description);
