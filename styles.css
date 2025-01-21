@@ -5,13 +5,6 @@
     font-family: monospace;
   }
   
-  body {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #f8f9fa;
-  }
-  
   .header-container {
     min-height: 100vh;
     width: 100%;
@@ -23,14 +16,14 @@
   }
   
   #diagonal {
-    height: 250px;
-    width: 500px;
+    height: 200px;
+    width: 200px;
     position: absolute;
     top: 0%;
     right: 0%;
     background-color: orange;
     transform-origin: bottom right;
-    transform: skewY(-20deg) scaleY(10) scaleX(20);
+    transform: skewY(-19deg) scaleY(10) scaleX(20);
     z-index: -1;
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
     animation: 2s diagonal-in;
@@ -45,6 +38,7 @@
   }
   
   #profile-picture {
+    position: relative;
     img {
       background-size: cover;
       height: 100%;
@@ -53,14 +47,14 @@
       object-position: 30%;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       animation: 1.5s fade-in;
+      
     }
     h1 {
-      font-size: 32px;
-      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
       color: black;
       padding-left: 10px;
-      position: relative;
-      top: 80%;
+      position: absolute;
+      top: 90%;
     }
   }
   
@@ -84,15 +78,15 @@
     }
     p {
       font-size: 1.4rem;
-      margin-bottom: auto;
-      padding: 0px 20px 20px;
+      margin-bottom: 1em;
+      padding:20px;
     }
   }
   
   .icons {
     display: flex;
     justify-content: end;
-    gap: 1em;
+    gap: 1em; 
     img {
       max-height: 35px;
       transition: transform 0.5s;
@@ -108,7 +102,6 @@
   @media (max-width: 768px) {
     .about-me {
       flex-direction: column;
-      align-items: center;
       height: auto;
     }
   
@@ -128,33 +121,46 @@
   }
   
 
+
+
+
+
+
+
+
+
+
+  
 /* My works */
 
 #works {
-    margin-top: 64px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 32px;
-    margin-bottom: 24px;
-}
-#works h1 {
-    font-size: 2em;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: auto;
+    h1{
+        font-size: 4rem;
+    }
 }
 
 .grid {
     display: flex;
-    flex-direction: column;
-    gap: 32px;
-    margin: 50px;
+    flex-direction: row;
+    flex-wrap:wrap;
+    align-items: center;
+    gap: 35px;
+    margin: 3em;
 }
 
 .project {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: auto;
+    width: 30em;
     transition: transform 1s;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -166,6 +172,8 @@
 .projImg {
     height: 30vh;
     width: 100%;
+    font-size: 1.5rem;
+    font-weight: 900;
 }
 
 .descSec {
@@ -195,12 +203,26 @@
     transform: scale(1.1);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* footer */
 
 #footer {
     width: 100%;
     display: flex;
-    flex-direction:column;
+    flex-direction:row;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
     .contactme-p {
@@ -209,20 +231,20 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 1em;
+        padding:2em;
+        background-color: orange;
     }
     
     .contactme-p h1 {
         font-size: 2em;
-        align-self: center;
+
     }
     
     .contactme-p h2 {
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
     
     .footericons {
-        align-self: center;
         display: flex;
         gap: 12px;
     }
@@ -239,14 +261,14 @@
     
     .footerimg {
         height: 60vh;
-        width: 100%;
+        width: 80%;
         overflow: hidden;
     }
     
     .footerimg img {
         height: 100%;
         width: 100%;
-        object-fit: cover;
+        object-fit: fit;
     }
     
     /* Media Queries */
@@ -267,7 +289,6 @@
     
         #profile-image h1 {
             font-size: 32px;
-            font-family: Arial, Helvetica, sans-serif;
             color: black;
             position: absolute;
             top: 3%;
@@ -318,123 +339,5 @@
             }
         }
     
-        #works {
-            margin-top: 0px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 32px;
-        }
-    
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin: 20px;
-        }
-    
-        .project {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: auto;
-            margin: 0px;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        }
-    
-        .projImg {
-            height: 30vh;
-            width: 100%;
-        }
-    
-        .descHead {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-    
-        .descIcons {
-            display: flex;
-            gap: 12px;
-        }
-    
-        .descIcons img {
-            height: 25px;
-        }
-    }
-    
-    @media (min-width: 1000px) {
-        #head {
-            max-height: 100vh;
-            padding: 3em 2%;
-        }
-    
-        #about-me {
-            background-color: transparent;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-    
-        #profile-image {
-            min-height: 90vh;
-            min-width: 40vw;
-            padding: 0;
-            float: none;
-            transform: scale(1);
-        }
-    
-        #profile-image h1 {
-            font-size: 32px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: black;
-            left: 30%;
-            top: 95%;
-            position: absolute;
-            min-width: max-content;
-        }
-    
-        #profile-image img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-    
-        .about-p {
-            min-height: 40vw;
-            padding: 0 35px 20px;
-            display: flex;
-            flex-direction: column;
-            transform-origin: left;
-            transform: scaleX(1);
-            animation: 1.3s slidein ease-out;
-        }
-    
-        @keyframes slidein {
-            from {
-                opacity: 0%;
-                transform: scaleX(0);
-            }
-    
-            to {
-                opacity: 1;
-                transform: scaleX(1);
-            }
-        }
-    
-        .about-p p {
-            font-size: 1.3em;
-        }
-    
-        #works {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 32px;
-        }
-    
-        .grid {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
     }
 }
