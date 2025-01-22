@@ -47,7 +47,6 @@
       object-position: 30%;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       animation: 1.5s fade-in;
-      
     }
     h1 {
       font-size: 20px;
@@ -150,9 +149,10 @@
 .grid {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     flex-wrap:wrap;
     align-items: center;
-    gap: 35px;
+    gap: 30px;
     margin: 3em;
 }
 
@@ -224,17 +224,18 @@
     display: flex;
     flex-direction:row;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
-    .contactme-p {
-        min-height: 40vh;
-        color: black;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding:2em;
-        background-color: orange;
-    }
-    
+}
+
+.contactme-p {
+  min-height: 30vh;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding:2em;
+  background-color: orange;
+  flex:1 ;
+}
     .contactme-p h1 {
         font-size: 2em;
 
@@ -260,6 +261,7 @@
     }
     
     .footerimg {
+      flex: 1;
         height: 60vh;
         width: 80%;
         overflow: hidden;
@@ -268,8 +270,33 @@
     .footerimg img {
         height: 100%;
         width: 100%;
-        object-fit: fit;
+        object-fit: cover;
     }
+  
+
+    @media (max-width: 883px) {
+      #footer {
+          flex-direction: column; 
+          align-items:stretch;
+      }
+  
+      .contactme-p {
+          width: 100%;       
+        }
+  
+      .footerimg {
+          width: 100%;
+          height: auto; 
+      }
+      .footerimg img {
+        width: 100%;   
+        object-fit: cover;  
+      }
+  }
+
+
+
+  
     
     /* Media Queries */
     @media (min-width: 600px) {
@@ -312,7 +339,6 @@
             font-size: 1.2em;
             padding: 20px 35px 20px 35px;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            animation: 1.5s fallin;
         }
     
         .about-p h1 {
@@ -324,20 +350,4 @@
             align-items: center;
         }
     
-        @keyframes fallin {
-            from {
-                opacity: 0%;
-                transform-origin: top left;
-                transform: scale(0);
-            }
-            40% {
-                opacity: 0%;
-            }
-            to {
-                opacity: 100%;
-                transform: scale(1);
-            }
-        }
-    
     }
-}
