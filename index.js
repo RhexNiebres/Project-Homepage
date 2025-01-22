@@ -8,7 +8,7 @@ function getRandomColor(){
 }
 
 function driver() {
-    const projectCount = 6;
+    const projectCount = 8;
 
     for (let i = 0; i < projectCount; i++) {
         const projTile = document.createElement("div");
